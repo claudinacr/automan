@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from base.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('base/new/', new_owner, name='new_owner'),
+    path('base/create/', create_owner, name='create_owner'),
+    path('base/list/', index_owner, name='index_owner'),
+    path('base/owner/delete/<int:owner_id>', delete_owner, name='delete_owner'),
+    path('base/owner/edit/<int:owner_id>', edit_owner, name='edit_owner'),
+    path('base/owner/update/<int:owner_id>', update_owner, name='update_owner'),
+
+
+
+
+
 ]
